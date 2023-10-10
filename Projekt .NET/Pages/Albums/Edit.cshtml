@@ -1,0 +1,72 @@
+﻿@page
+@model Projekt_.NET.Pages.Albums.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="container2">
+    <div class="top">
+        Edytuj album
+    </div>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Album.Id" />
+        <div class="row-add">
+            <label asp-for="Album.Title" class="row-edit-label"></label>
+            <input asp-for="Album.Title" class="form-control" />
+        </div>
+        <span asp-validation-for="Album.Title" class="text-danger"></span>
+        <div class="row-add">
+            <label asp-for="Album.PhotoData" class="row-edit-label"></label>
+            <input asp-for="Album.PhotoData" class="form-control" />
+        </div>
+        <span asp-validation-for="Album.PhotoData" class="text-danger"></span>
+        <div class="row-add">
+            <label asp-for="Album.Price" class="row-edit-label"></label>
+            <input asp-for="Album.Price" class="form-control" />
+        </div>
+        <span asp-validation-for="Album.Price" class="text-danger"></span>
+        <div class="row-add">
+            <label asp-for="Album.RelaseDate" class="row-edit-label"></label>
+            <input asp-for="Album.RelaseDate" class="form-control" />
+        </div>
+        <span asp-validation-for="Album.RelaseDate" class="text-danger"></span>
+        <div class="row-add">
+            <label asp-for="Album.DistributorId" class="row-edit-label"></label>
+            <select asp-for="Album.DistributorId" class="form-control" asp-items="ViewBag.DistributorId"></select>
+        </div>
+        <span asp-validation-for="Album.DistributorId" class="text-danger"></span>
+        <div class="row-edit">
+            <label asp-for="Album.ProducerId" class="row-edit-label"></label>
+            <select asp-for="Album.ProducerId" class="form-control" asp-items="ViewBag.ProducerId"></select>
+        </div>
+        <span asp-validation-for="Album.ProducerId" class="text-danger"></span>
+        <div class="row-add">
+            <label asp-for="Album.CategoryId" class="row-edit-label"></label>
+            <select asp-for="Album.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+        </div>
+        <span asp-validation-for="Album.CategoryId" class="text-danger"></span>
+        <div class="row-add">
+            <label>Wykonawcy albumu: </label>
+            @foreach (var performer in Model.performers)
+            {
+                @Html.DisplayFor(model => performer.Name)
+            }
+        </div>
+        <div class="row-add">
+            <label class="row-edit-label">Wykonawcy: </label>
+            <select asp-for="Selected_PerformersIds" class="form-control" asp-items="ViewBag.Performers"></select>
+        </div>
+        <div class="row-edit-button">
+            <button class="buy-button">Zatwierdź</button>
+        </div>
+    </form>
+    <div class="row-add">
+        <div class="back_to_list">
+            <a asp-page="../Index">Wróć</a>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

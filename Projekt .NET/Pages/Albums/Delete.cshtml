@@ -1,0 +1,60 @@
+﻿@page
+@model Projekt_.NET.Pages.Albums.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="empty-delete"></div>
+<h3>Napewno chcesz usunąć album ?</h3>
+<div>
+    <h4>Album</h4>
+    <hr />
+    <div class="row_1">
+        <b>@Html.DisplayNameFor(model => model.Album.Title)</b>
+        @Html.DisplayFor(model => model.Album.Title)
+     </div>
+    <div class="row_1">
+        <b> @Html.DisplayNameFor(model => model.Album.Price)</b>
+        @Html.DisplayFor(model => model.Album.Price)
+    </div>
+    <div class="row_1">
+        <b>@Html.DisplayNameFor(model => model.Album.RelaseDate)</b>
+            @Html.DisplayFor(model => model.Album.RelaseDate)
+    </div>
+    <div class="row_1">
+           <b> @Html.DisplayNameFor(model => model.Album.Distributor)</b>
+            @Html.DisplayFor(model => model.Album.Distributor.Name)
+    </div>
+    <div class="row_1">
+        <b> @Html.DisplayNameFor(model => model.Album.Producer)</b>
+            @Html.DisplayFor(model => model.Album.Producer.Name)
+    </div>
+    <div class="row_1">
+        <b>
+            @Html.DisplayNameFor(model => model.Album.Category)
+        </b>
+            @Html.DisplayFor(model => model.Album.Category.Name)
+    </div>
+        <div class="row_1">
+            <b>@Html.DisplayNameFor(model => model.performers)</b>
+            @foreach (var performer in Model.performers)
+            {
+                @Html.DisplayFor(model => performer.Name)
+                @if (!performer.Equals(Model.performers.Last()))
+                {
+                    <span>, </span>
+                }
+            }
+        </div>
+    <div class="empty-delete"></div>
+    <form method="post">
+        <input type="hidden" asp-for="Album.Id" />
+            <input type="submit" value="Usuń" class="btn btn-danger" />
+    </form>
+    <div class="row-edit">
+        <div class="back_to_list">
+            <a asp-page="../Index">Wróć</a>
+        </div>
+    </div>
+</div>

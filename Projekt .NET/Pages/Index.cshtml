@@ -1,0 +1,36 @@
+﻿@page
+@using Projekt_.NET.Models;
+@model Projekt_.NET.Pages.Albums.IndexModel
+
+@{
+    ViewData["Title"] = "Albumy";
+}
+
+<div class="main_content_album_list">
+    @foreach (var item in Model.Album)
+    {
+        @if (Model.Album.IndexOf(item) % 3 == 0)
+        {
+            <div class="empty"> </div>
+        }
+        <a asp-page="./Albums/Details" asp-route-id="@item.Id">
+            <div class="inner-container">
+                 <img src="~/images/@(item.PhotoData).jpg" width="200" height="200" margin-top="30px" />
+                <div class="album_title">
+                    @Html.DisplayFor(modelItem => item.Title)
+                </div>
+                <div class="album_performers">
+                    @foreach (var albumPerformer in item.Performers)
+                    {
+                        @albumPerformer.Performer.Name
+                        @if (!albumPerformer.Equals(item.Performers.Last()))
+                        {
+                            <span>, </span>
+                        }
+                    }
+                </div>
+            </div>
+        </a>
+    }
+    <div class="empty-size"></div>
+</div>

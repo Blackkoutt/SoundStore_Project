@@ -1,0 +1,358 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color:white;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+a{
+    text-decoration:none;
+    color:#fff;
+}
+.main_logo {
+    display: inline-block;
+    background-color: black;
+    width: 100%;
+}
+
+.logo {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 35px;
+    background-color: black;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.shop_name {
+    font-size: 45px;
+    background-color: black;
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.end {
+    text-align: center;
+    font-size: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid black;
+    background-color: black;
+    color:white;
+    width: 100%;
+    bottom: 0;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 35px; /* Wysokoœæ stopki */
+    background-color: #f2f2f2;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ddd;
+}
+
+.logo:hover {
+    text-decoration: none;
+    color: #bbb;
+}
+
+.topnav {
+    border-top: 1px solid #b1b1b1;
+    background-color: black; /*#1cb91d;*/
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.menu {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.menu li {
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 1px solid #b1b1b1;
+}
+
+.menu li a:hover {
+    text-decoration: none;
+    color: #e42e05;
+}
+.main_content_album_list {
+    margin-right:auto;
+    margin-left:auto;
+    width:1300px;
+    height:600px;
+}
+.inner-container {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    padding: 20px;
+    animation: slideTop 1s ease forwards;
+    margin-top: 40px;
+    margin-left: 100px;
+    background-color: #ffff00;
+}
+.inner-container:hover {
+    background-color: #eeee00;
+}
+.album_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-top: 8px;
+}
+.album_performers{
+    font-size:15px;
+    color:black;
+}
+.empty-size{
+    margin-top:140px;
+}
+.img-size {
+    float: left;
+    margin-right: 10px; 
+}
+
+.details {
+    width:600px;
+    margin-left:20px;
+    float: left;
+}
+.details_container{
+    width:1200px;
+    margin-top:30px;
+    margin-right:auto;
+    margin-left:auto;
+    font-size:20px;
+}
+.container2{
+    width:400px;
+    margin-top:40px;
+    margin-right:auto;
+    margin-left:auto;
+}
+.row-add{
+    margin-top:20px;
+    font-size:18px;
+    background-image:linear-gradient(to right orange, yellow)
+}
+.row-add-label{
+    margin-left:10px;
+}
+.top{
+    font-size:35px;
+    font-weight:bold;
+    animation:slideDown 1s ease forwards;
+    text-align:center;
+}
+.row-add-btn{
+    margin-top:20px;
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+
+}
+.row-edit-label{
+    margin-left:10px;
+}
+.row-edit-button{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+.remove {
+    color: #990000;
+    text-align:center;
+    font-weight:bold;
+}
+.remove:hover {
+    color: #770000;
+    text-decoration: underline;
+}
+.empty-delete{
+    margin-top:30px;
+}
+.accept-button {
+    font-size: 20px;
+    border: none;
+    border-radius: 15px;
+    width: 150px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #3f51b5, transparent) #2196f3;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    animation: slideTop 1s ease forwards;
+}
+
+.accept-button:hover, .accept-button:focus {
+    background-color: #e91e63;
+    color: #fff;
+}
+.buy-button {
+    font-size: 20px;
+    border: none;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 1s;
+    background: linear-gradient(90deg, #2f970aca, transparent) #2916f6ca;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    animation: slideTop 1s ease forwards;
+}
+
+    .buy-button:hover, .buy-button:focus {
+        background-color: #cb0808ca; /* #6dcb08ca;*/ /*#e91e63;*/
+        color: #fff;
+    }
+@keyframes slideTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.row_1{
+    margin-left:20px;
+    font-size:22px;
+}
+.buy_album {
+    color: rgb(255, 107, 0);
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border: 3px solid rgb(231, 231, 231);
+    border-radius: 10px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    text-align: center;
+}
+.row_content_price{
+    font-size: 30px;
+}
+.buy-button {
+    margin-top: 15px;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: bold;
+    background: rgb(255, 107, 0);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    animation: slideTop 1s ease forwards;
+}
+.edit_album {
+    color: #fff;
+    background-color: #33cc33;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px;
+    width: 100px;
+    margin-left: 10px;
+    margin-top: 20px;
+    float: left;
+}
+.back_to_list {
+    background-color: #1a53ff;
+    color: #fff;
+    float: left;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    margin-top: 20px;
+    padding: 3px;
+}
+.delete_album {
+    background-color: #e62e00;
+    color: #fff;
+    margin-left: 10px;
+    float: left;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    margin-top: 20px;
+    padding: 3px;
+}
+.delete_album:hover {
+    background-color: #c40c00;
+}
+.edit_album:hover {
+    background-color: #11aa11;
+}
+back_to_list:hover {
+    background-color: #1a31dd;
+}

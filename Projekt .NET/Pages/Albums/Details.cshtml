@@ -1,0 +1,72 @@
+﻿@page
+@model Projekt_.NET.Pages.Albums.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="details_container">
+    <div class="img-size">
+
+            <img src="~/images/@(Model.Album.PhotoData).jpg" width="400" height="400" margin-top="30px" />  
+    </div>
+    <div class="details">
+        <div class="row_1">
+            <b>@Html.DisplayNameFor(model => model.Album.Title)</b>
+                @Html.DisplayFor(model => model.Album.Title)
+        </div >
+        <div class="row_1">
+            <b><label>Wykonawcy: </label></b>
+                @foreach (var performer in Model.performers)
+                {
+                    @Html.DisplayFor(model => performer.Name)
+                    @if (!performer.Equals(Model.performers.Last()))
+                    {
+                        <span>, </span>
+                    }
+                }
+        </div>
+        <div class="buy_album">
+            <div class="row_content_price">
+                @Html.DisplayFor(model => model.Album.Price) zł
+            </div>
+            <form method="post">
+                @Html.Hidden("id", Model.Album.Id)
+                <button class="buy-button">Dodaj do koszyka</button>
+             </form>
+        </div>
+
+        
+        <div class="row_1">
+            <h4>Szczegóły albumu: </h4>
+            <b>@Html.DisplayNameFor(model => model.Album.RelaseDate)</b>
+            @Html.DisplayFor(model => model.Album.RelaseDate)
+        </div>
+        <div class="row_1">
+            <b>@Html.DisplayNameFor(model => model.Album.Distributor)</b>
+            @Html.DisplayFor(model => model.Album.Distributor.Name)
+        </div>
+        <div class="row_1">
+            <b>@Html.DisplayNameFor(model => model.Album.Category)</b>
+            @Html.DisplayFor(model => model.Album.Category.Name)
+        </div>
+        <div class="row_1">
+            <b>@Html.DisplayNameFor(model => model.Album.Producer)</b>
+            @Html.DisplayFor(model => model.Album.Producer.Name)
+            
+        </div>
+        <div class="row_1">
+            <div class="back_to_list">
+                <a asp-page="../Index">Wróć</a>
+            </div>
+            <div class="edit_album">
+                <a asp-page="./Edit" asp-route-id="@Model.Album?.Id">Edytuj</a>
+            </div>
+            <div class="delete_album">
+                <a asp-page="./Delete" asp-route-id="@Model.Album?.Id">Usuń</a>
+            </div>
+        </div>
+
+        
+    </div>
+</div>

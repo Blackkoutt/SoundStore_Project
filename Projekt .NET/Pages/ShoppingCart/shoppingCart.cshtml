@@ -1,0 +1,54 @@
+﻿@page
+@model Projekt_.NET.Pages.ShoppingCart.shoppingCartModel
+@{
+}
+<div class="top-cart">
+    <h2>Koszyk</h2>
+    <br /><br />
+</div>
+<div class="empty"></div>
+<div id="message">
+    @if (Model.anyDeleted == true)
+    {
+
+        <span id="span-message-error"><i class='bx bx-error-alt'></i> Co najmniej 1 produkt z koszyka został usunięty z bazy danych</span>
+    }
+</div>
+<div class="row col-sm-12">
+    <form method="post">
+        <button class="btn btn-primary btn-large">Wyczyść koszyk</button>
+    </form>
+</div>
+<br />
+<div class=table-list>
+    <table class="table table-dark table-bordered border-secondary table-stripped table-hover ">
+        <thead>
+            <tr>
+                <th class="column" scope="col">@Html.DisplayNameFor(model => Model.albumList[0].Id)</th>
+                <th class="column" scope="col">@Html.DisplayNameFor(model => Model.albumList[0].Title)</th>
+                <th class="column" scope="col">@Html.DisplayNameFor(model => Model.albumList[0].Price)</th>
+                <th class="column" scope="col">@Html.DisplayNameFor(model => Model.albumList[0].Performers)</th>
+                <th class="column" scope="col">Akcja</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model.albumList)
+            {
+                <tr>
+                    <th class="column" scope="row">@Html.DisplayFor(m => p.Id)</th>
+                    <td class="column">@Html.DisplayFor(m => p.Title)</td>
+                    <td class="column">@Html.DisplayFor(m => p.Price)</td>
+                    <td class="column">
+                        @foreach (var albumPerformer in p.Performers)
+                        {
+                            <li>@albumPerformer.Performer.Name</li>
+                        }
+                    </td>
+                    <td class="column">
+                        <a class="remove" asp-page="RemoveElementFromCart" asp-route-id=@p.Id>Kasuj</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

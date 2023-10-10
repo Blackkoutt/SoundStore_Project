@@ -1,0 +1,26 @@
+﻿@page
+@model Projekt_.NET.Pages.Categories.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container2">
+    <div class="top">
+        Nowa kategoria
+    </div>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row-add">
+            <label asp-for="Category.Name" class="row-add-label"></label>
+            <input asp-for="Category.Name" class="form-control" />    
+        </div>
+        <span asp-validation-for="Category.Name" class="text-danger"></span>
+        <div class="row-add-btn">
+            <button class="accept-button">Zatwierdź</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

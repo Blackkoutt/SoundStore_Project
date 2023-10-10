@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Projekt_.NET</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Projekt_.NET.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="main_logo">
+            <div class="logo">
+                <img src="~/images/logo2.png" width="70" height="70"/>
+            </div>
+            <div class="shop_name">
+                <a asp-area=" " asp-page ="/Index">Sound Store</a>
+            </div>
+        </div>
+        <nav class=" topnav">
+            <ul class="menu">
+                <li>
+                    <a asp-area="" asp-page="/Index">Strona główna</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/Albums/Create">Dodaj album </a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/Categories/Index">Zarządzaj kategoriami</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/Producers/Index">Zarządaj producentami</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/Performers/Index">Zarządaj wykonawcami</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/Distributors/Index">Zarządaj dystrybutorami</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-page="/ShoppingCart/shoppingCart">Pokaż koszyk</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="end">
+            Wszelkie prawa zastrzeżone &copy;2023 Sound Store
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
